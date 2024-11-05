@@ -1,6 +1,9 @@
 # include <iostream>
 # include <stack>
 # include <queue>
+# include <unordered_map>
+# include <map>
+# include <set>
 
 using namespace std;
 
@@ -77,11 +80,30 @@ int main(){
 
     //哈希表hash table
     // 哈希表是一种数据结构，它可以快速的插入和查找数据
-    
+    // 不保证元素顺序，有点像字典
+    unordered_map<string, int> hashTable;
+    hashTable["apple"] = 10;
+    cout << hashTable["apple"] << endl;
 
+    // 映射map
+    // map是一种有序的哈希表，它可以快速的插入和查找数据
+    map<string, int> mymap;
+    mymap["apple"] = 10;
+    cout << mymap["apple"] << endl;
 
- 
+    // 集合set
+    // 保证元素不充分且有序
+    set <int> myset;
+    myset.insert(11);
+    myset.insert(22);
+    cout << *myset.begin() << endl; // output the first element
 
+    // 动态数组vector
+    // 动态扩展容量，支持随机访问
+    vector<int> v;
+    v.push_back(1);
+    v.push_back(2);
+    cout << v[0] << endl; // output the first element 1
 
     return 0;
 }
