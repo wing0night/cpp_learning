@@ -5,6 +5,7 @@ fn main() {
     learn_type();
     math_operation();
     place_operation();
+    operate_char();
 }
 
 // 变量声明
@@ -26,6 +27,10 @@ fn state_var(){
     let e = add(add(a, b), add(c, d));
 
     let _x = 5; //使用下划线告知，这个变量不会被使用，避免编译器警告
+
+    // bool类型
+    let _t = true;
+    let _f:bool=false;
 
     //常量（约定大写）
     const MAX_POINTS: u32 = 100_000;
@@ -51,6 +56,7 @@ fn state_var(){
 // 定义一个函数，输入两个i32类型的32位有符号整数，返回它们的和
 fn add(i: i32, j: i32) -> i32 {
     // 返回相加值，这里可以省略return
+    // 不能加分号，加了就变成了语句，不再是表达式，无法被返回
     i + j
 }
 
@@ -132,6 +138,19 @@ fn place_operation(){
     // 注意这些计算符除了!之外都可以加上=进行赋值 (因为!=要用来判断不等于)
     a <<= b;
     println!("(a << b) value is {:08b}", a);
+}
+
+fn operate_char(){
+    // 字符类型
+    let c = 'z';
+    let z = 'ℤ';
+    let heart_eyed_cat = '😻';
+    // 所有unicode值都可以作为rust字符
+    let zhong = '中';
+    println!("c = {}", c);
+    println!("z = {}", z);
+    println!("heart_eyed_cat = {}", heart_eyed_cat);
+    println!("字符的大小为{}", std::mem::size_of_val(&zhong));
 }
 
 
