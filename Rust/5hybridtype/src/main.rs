@@ -1,10 +1,14 @@
 #![allow(unused_variables)] // 允许被定义变量未使用
 fn main() {
+    // String
     cut();
     type_string();
     escape();
     non_escape();
     operate_utf8();
+
+    // tup元组
+    tup();
 }
 
 // 切片
@@ -165,10 +169,54 @@ fn operate_utf8(){
     for b in "中国人".bytes() {
         println!("{}", b);
     }
-    
 }
 
+// 元组操作
+fn tup(){
+    let tup : (i32, f64, u8) = (500, 6.4, 1); // 被绑定一个类型(i32, f64, u8)
+    // 获取元组中的数值：用模式匹配解构元组
+    let tup_2 = (500, 6.4, 1);
+    let (x, y, z) = tup_2;
+    println!("The value of y is: {}", y);
 
+    // 通过点号加索引来访问元组中的元素
+    let x: (i32, f64, u8) = (500, 6.4, 1);
+    let five_hundred = x.0;
+    let six_point_four = x.1;
+    let one = x.2;
+    println!("The value of five_hundred is: {}", five_hundred);
+
+    // 元组作为函数返回类型
+    let s1 = String::from("hello");
+    let (s2, len) = calculate_length(s1);
+    println!("The length of '{}' is {}.", s2, len);
+
+}
+// 返回字符串长度以及原本的字符串
+fn calculate_length(s: String) -> (String, usize) {
+    let length = s.len(); // len() 返回字符串的长度
+    (s, length)
+}
+
+// Structure结构体
+fn structure(){
+    // 定义结构体
+    struct User {
+        username: String,
+        email: String,
+        sign_in_count: u64,
+        active: bool,
+    }
+    // 创建结构体实例
+    let mut user1 = User {
+        email: String::from("someone@example.com"),
+        username: String::from("someusername123"),
+        active: true,
+        sign_in_count: 1,
+    };
+    // 通过.访问结构体字段
+    user1.email = String::from("anotheremail@example.com");
+}
 
 
 
