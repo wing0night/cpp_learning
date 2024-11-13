@@ -297,10 +297,10 @@ fn enumeration(){
     }
     // 枚举成员可以包含数据
     // 利用::访问枚举成员
-    let heart = PokerCard::Hearts;
-    let diamond = PokerCard::Diamonds;
-    print_suit(heart);
-    print_suit(diamond);
+    // let heart = PokerCard::Hearts;
+    // let diamond = PokerCard::Diamonds;
+    // print_suit(heart);
+    // print_suit(diamond);
 
     // 枚举成员可以包含数据
     // 同一枚举下的不同枚举成员可以包含不同类型的数据
@@ -321,6 +321,11 @@ fn enumeration(){
     let m3 = Message::ChangeColor(255,255,0);
     println!("{:?}, {:?}, {:?}", m1, m2, m3);
 }
+
+
+
+
+
 
 
 
